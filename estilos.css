@@ -1,0 +1,125 @@
+body {
+  background-image: url("fondo2.jpg");
+  background-size: cover; 
+  background-position: center top;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* toda la barra */
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0e0e0e; /* color de fondo */
+  padding: 5px 15px;
+  position: fixed; /*fija la barra*/
+  top: 0;
+  left: 0;
+  width: 100%;
+
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 85px; 
+  margin: 0 auto;
+  padding: 0;
+  font-size: 25px;
+  font-family: 'teko', 'Montserrat'; /*tipografia*/
+}  
+.logo img {
+  height: 40px; /* tamaño del logo */
+  align-items: right;
+  justify-content: right;
+  padding-top: 1px;
+}
+.nav-links li a {
+  text-decoration: none;
+  color: #cbc2b5;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+/* cambia color al poner cursor arriba */
+.nav-links li a:hover {
+  color: #e8a441; 
+}
+
+/*--------------------------------------------*/
+
+main {
+  display: flex;           /*bolucedes para no olvidarme xp:*/
+  flex-direction: column;   /* elementos uno debajo del otro */
+  justify-content: center;  /* lo centra verticalmente */
+  align-items: center;      /* ño centra horizontalmente */
+  height: 90vh;            /* esto ocupa toda la pantalla */
+  text-align: center; 
+  flex: 1;
+}
+
+.logoMain img{
+  height: 150px;
+  margin-bottom: 20px;
+  margin-top: 130px;
+  align-items: center;
+  justify-content: center;
+}
+
+p {
+  max-width: 600px; 
+  font-size: 20px;
+  color: #dfdfdf;
+  font-family: 'Nunito Sans', 'Montserrat'; /*tipografia*/
+}
+
+/*----------------------*/
+
+.carousel {
+
+  margin: 50px auto;
+  color: #cbc2b5;
+  bottom: 0;       /* lo pega al borde inferior */
+  left: 0;
+  width: 100%;
+  margin-top: 700px;
+  background-color: #72202069; /*esto es para ver la posicion, despues lo borro*/
+  padding: 20px;
+}
+
+.carousel-content {
+  display: flex;
+  align-items: center;      /* centra verticalmente */
+  justify-content: center;   /* centra horizontalmente */
+  gap: 20px;    
+  text-align: center;             
+}
+
+.slide {
+  display: none;
+  font-size: 20px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.slide.active {
+  display: block;
+}
+
+button.prev, button.next{
+  background: #00000000;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 24px;  
+}
+
+button.prev{ 
+  left: 0; 
+}
+button.next{ 
+  right: 0; 
+}

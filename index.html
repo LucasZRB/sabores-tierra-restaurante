@@ -3,11 +3,111 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="estilos.css">
+/*teko*/
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quantico:ital,wght@0,400;0,700;1,400;1,700&family=Science+Gothic:wght@100..900&family=Teko:wght@300..700&display=swap" rel="stylesheet">
+/*Nunito Sans*/
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&family=Science+Gothic:wght@100..900&family=Teko:wght@300..700&display=swap" rel="stylesheet">
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="icon" href="public/iconoBarra.png" type="image/png">
     <title>Sabores de la Tierra</title>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+
+        <nav class="navbar">
+
+    <div class="logo">
+      <img src="public/iconoBarra.png" alt="Logo">
+    </div>
+
+    <!--navegador-->
+    <ul class="nav-links">
+      <li><a href="index.html">INICIO</a></li>
+      <li><a href="productos.html">PRODUCTOS</a></li>
+      <li><a href="contacto.html">CONTACTO</a></li>
+      <div class="historia">
+        <li><a href="#historia">NUESTRA HISTORIA</a></li>
+      </div>
+      
+    </ul>
+  </nav>
+<main>
+    <div class="logoMain">
+      <img src="public/icono1.png" alt="Logo1">
+    </div>
+    <p>"Nuestro espacio rústico y acogedor da la bienvenida donde cada plato refleja la esencia de lo auténtico. Entre maderas, aromas y tradición, invitamos a disfrutar de una experiencia 
+    culinaria que celebra la calidez de la tierra
+    y el placer de compartir"</p>
+    
+<!-- parte de abajo-->
+<footer> 
+    <div id="historia" class="carousel">
+  <h2>Nuestra Historia</h2>
+  <button class="prev">◀︎</button>
+  <div class="slide active">
+    <p>“Sabores de la Tierra” nació de un sueño sencillo: 
+      recuperar la esencia de las comidas compartidas en torno al fuego. 
+      Todo comenzó en una antigua casona de madera, donde las reuniones 
+      familiares se llenaban de aromas intensos, vinos generosos y carnes 
+      condimentadas con esmero.</p>
+  </div>
+  <div class="slide">
+    <p>Lo que empezó como encuentros entre amigos se transformó en un 
+      proyecto más grande: abrir las puertas de un lugar donde cada visitante 
+      pudiera sentir la calidez de lo rústico y la fuerza de lo auténtico. 
+      Inspirados por la tradición y el respeto a los sabores de nuestra tierra, 
+      levantamos un espacio que honra lo natural, lo artesanal y lo verdadero.</p>
+  </div>
+  <div class="slide">
+    <p>Hoy, cada plato que servimos cuenta esa historia: la de un origen humilde, 
+      una pasión por la cocina y un compromiso con ofrecer experiencias que nacen 
+      de la tierra y se disfrutan en el alma.</p>
+  </div>
+
+  <!-- botones para cambiar img-->
+  
+  <button class="next">▶︎</button>
+
+</div>
+
+
+<script>
+  const slides = document.querySelectorAll(".slide");
+  let currentIndex = 0;
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.toggle("active", i === index);
+    });
+  }
+
+  document.querySelector(".next").addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % slides.length;
+    showSlide(currentIndex);
+  });
+
+  document.querySelector(".prev").addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    showSlide(currentIndex);
+  });
+
+  // Cambio automático cada 5 segundos
+  setInterval(() => {
+    currentIndex = (currentIndex + 1) % slides.length;
+    showSlide(currentIndex);
+  }, 5000);
+</script>
+</footer>
+</main>
+
+
+    
   </body>
 </html>
