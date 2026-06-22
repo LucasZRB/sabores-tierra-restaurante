@@ -1,12 +1,33 @@
-body {
+body.index{
   background-image: url("fondo2.jpg");
   background-size: cover; 
   background-position: center top;
   background-color: black;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: 100vh;/*toda la pantalla */
 }
+
+body.contacto{
+  background-image: url("fondo1.jpg");
+  background-size: cover; 
+  background-position: center top;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;/*toda la pantalla */
+}
+
+body.productos{
+  background-image: url("fondo1.jpg");
+  background-size: cover; 
+  background-position: center top;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;/*toda la pantalla */
+}
+
 
 /* toda la barra */
 .navbar {
@@ -60,6 +81,7 @@ main {
   flex: 1;
 }
 
+
 .logoMain img{
   height: 150px;
   margin-bottom: 20px;
@@ -85,7 +107,7 @@ p {
   left: 0;
   width: 100%;
   margin-top: 700px;
-  background-color: #72202069; /*esto es para ver la posicion, despues lo borro*/
+  background-color: #72202000; /*esto es para ver la posicion, despues lo borro*/
   padding: 20px;
 }
 
@@ -122,4 +144,84 @@ button.prev{
 }
 button.next{ 
   right: 0; 
+}
+
+footer {
+  width: 100%;
+  height: 80px;             
+  background-color: #0e0e0e; 
+}
+
+.abajo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #dfdfdf;
+
+}
+footer .abajo p {
+  font-family: 'Nunito Sans', 'Montserrat', sans-serif;
+  font-size: 14px;
+}
+
+/*----------------------------PRODUCTOS--------------------------------------*/
+
+.menu {
+  padding: 40px;
+  text-align: center;
+  color: #dfdfdf;
+  font-family: 'Nunito Sans', 'Montserrat', sans-serif;
+}
+
+.menu h2 {
+  margin: 30px 0 15px;
+  font-size: 28px;
+  color: #e8a441;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+.card {
+  background-color: #1a1a1a;
+  border-radius: 10px;
+  width: 250px;
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.card h3 {
+  margin: 10px 0;
+  font-size: 20px;
+  color: #fff;
+}
+
+.card p {
+  font-size: 14px;
+  color: #ccc;
+  margin-bottom: 10px;
+}
+
+.precio {
+  font-weight: bold;
+  color: #e8a441;
+  font-size: 18px;
 }
