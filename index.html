@@ -4,11 +4,11 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="stylesheet" href="estilos.css">
-/*teko*/
+<!-- teko -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quantico:ital,wght@0,400;0,700;1,400;1,700&family=Science+Gothic:wght@100..900&family=Teko:wght@300..700&display=swap" rel="stylesheet">
-/*Nunito Sans*/
+<!-- Nunito Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&family=Science+Gothic:wght@100..900&family=Teko:wght@300..700&display=swap" rel="stylesheet">
@@ -17,7 +17,7 @@
       <link rel="icon" href="public/iconoBarra.png" type="image/png">
     <title>Sabores de la Tierra</title>
   </head>
-  <body>
+  <body class="index">
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
 
@@ -29,12 +29,12 @@
 
     <!--navegador-->
     <ul class="nav-links">
-      <li><a href="index.html">INICIO</a></li>
-      <li><a href="productos.html">PRODUCTOS</a></li>
+     <li><a href="index.html">INICIO</a></li>
+     <li><a href="productos.html">PRODUCTOS</a></li>
       <li><a href="contacto.html">CONTACTO</a></li>
-      <div class="historia">
-        <li><a href="#historia">NUESTRA HISTORIA</a></li>
-      </div>
+      <li class="historia"><a href="#historia">NUESTRA HISTORIA</a></li>
+</ul>
+
       
     </ul>
   </nav>
@@ -46,11 +46,12 @@
     culinaria que celebra la calidez de la tierra
     y el placer de compartir"</p>
     
+    
 <!-- parte de abajo-->
-<footer> 
+<article>
     <div id="historia" class="carousel">
   <h2>Nuestra Historia</h2>
-  <button class="prev">◀︎</button>
+  
   <div class="slide active">
     <p>“Sabores de la Tierra” nació de un sueño sencillo: 
       recuperar la esencia de las comidas compartidas en torno al fuego. 
@@ -73,41 +74,47 @@
 
   <!-- botones para cambiar img-->
   
-  <button class="next">▶︎</button>
-
+  <button class="prev">◀︎</button><button class="next">▶︎</button>
 </div>
 
 
 <script>
-  const slides = document.querySelectorAll(".slide");
-  let currentIndex = 0;
+  const slides = document.querySelectorAll(".slide"); //busca todos los slide y los guarda en una constante
+  let currentIndex = 0; //empi9eza por la primer dispositiva
 
   function showSlide(index) {
-    slides.forEach((slide, i) => {
+    slides.forEach((slide, i) => { //recorre las dispositivas
       slide.classList.toggle("active", i === index);
     });
   }
 
-  document.querySelector(".next").addEventListener("click", () => {
+  document.querySelector(".next").addEventListener("click", () => { //boton
     currentIndex = (currentIndex + 1) % slides.length;
     showSlide(currentIndex);
   });
 
-  document.querySelector(".prev").addEventListener("click", () => {
+  document.querySelector(".prev").addEventListener("click", () => { //boton
     currentIndex = (currentIndex - 1 + slides.length) % slides.length;
     showSlide(currentIndex);
   });
 
-  // Cambio automático cada 5 segundos
-  setInterval(() => {
+ 
+  setInterval(() => { 
     currentIndex = (currentIndex + 1) % slides.length;
     showSlide(currentIndex);
-  }, 5000);
+  }, 8000);// Cambio automatico cada 8 segundos
 </script>
-</footer>
+
+</article>
 </main>
 
 
+
+<footer> 
+  <div class="abajo">
+    <p>© 2026 Sabores de la Tierra | Todos los derechos reservados</p>
+    <p>Bahía Blanca, Buenos Aires, Argentina</p></div>
+</footer>
     
   </body>
 </html>
