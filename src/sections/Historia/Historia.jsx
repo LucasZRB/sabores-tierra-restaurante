@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { SectionTitle } from '../Productos/Productos.styles';
-import { HistoryWrapper, CarouselContainer, HistoryText, TriangleButton, BackgroundIcon } from './Historia.styles';
+import { HistoryWrapper, CarouselContainer, HistoryText, TriangleButton, BackgroundIcon, ControlButton } from './Historia.styles';
 
 const SLIDES_HISTORIA = [
   "“Sabores de la Tierra” nació de un sueño sencillo: recuperar la esencia de las comidas compartidas en torno al fuego. Todo comenzó en una antigua casona de madera, donde las reuniones familiares se llenaban de aromas intensos, vinos generosos y carnes condimentadas con esmero.",
@@ -10,9 +10,21 @@ const SLIDES_HISTORIA = [
 
 export function Historia() {
   const [index, setIndex] = useState(0);
+  const [isPlaying, setIsPlaying] = useState(true)
 
   const anterior = () => setIndex((prev) => (prev === 0 ? SLIDES_HISTORIA.length - 1 : prev - 1));
   const siguiente = () => setIndex((prev) => (prev === SLIDES_HISTORIA.length - 1 ? 0 : prev + 1));
+
+  useEffect(() => {
+    if (!isPlaying) return;
+
+    const interval = setInterval(siguiente, 5000);
+
+    return () => clearInterval(interval);
+  }, [isPlaying]);
+
+  const handleAnterior = () => { anterior(); setIsPlaying(false); };
+  const handleSiguiente = () => { siguiente(); setIsPlaying(false); };
 
   return (
     <HistoryWrapper>
@@ -26,10 +38,16 @@ export function Historia() {
       </BackgroundIcon>
       
       <CarouselContainer>
-        <TriangleButton onClick={anterior}>◀</TriangleButton>
+        <TriangleButton onClick={handleAnterior}>◀</TriangleButton>
         <HistoryText>{SLIDES_HISTORIA[index]}</HistoryText>
-        <TriangleButton onClick={siguiente}>▶</TriangleButton>
+        <TriangleButton onClick={handleSiguiente}>▶</TriangleButton>
       </CarouselContainer>
+
+      <ControlButton
+        onClick={() => setIsPlaying(prev => !prev)}
+      >
+        {isPlaying ? 'Pausar' : 'Reanudar'}
+      </ControlButton>
       
       <BackgroundIcon className="right">
         <svg width="80" height="80" fill="currentColor" viewBox="0 0 16 16">

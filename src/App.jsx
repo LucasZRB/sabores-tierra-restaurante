@@ -45,7 +45,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <GlobalStyles />
       <Navbar currentScreen={currentScreen} setCurrentScreen={setCurrentScreen} />
-      <MainLayout>
+      <MainLayout $isPrincipal={currentScreen === 'inicio'}>
         {renderScreen()}
       </MainLayout>
       <Footer />
