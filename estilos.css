@@ -28,7 +28,7 @@ body.productos{
   min-height: 100vh;/*toda la pantalla */
 }
 
-
+/* ------------------------------------INDEX--------------------------------- */
 /* toda la barra */
 .navbar {
   display: flex;
@@ -53,7 +53,7 @@ body.productos{
   font-family: 'teko', 'Montserrat'; /*tipografia*/
 }  
 .logo img {
-  height: 40px; /* tamaño del logo */
+  height: 40px; /*tamaño logo */
   align-items: right;
   justify-content: right;
   padding-top: 1px;
@@ -113,10 +113,11 @@ p {
 
 .carousel-content {
   display: flex;
-  align-items: center;      /* centra verticalmente */
-  justify-content: center;   /* centra horizontalmente */
+  align-items: center;      /*centra vertical */
+  justify-content: center;   /*centra horizontal */
   gap: 20px;    
-  text-align: center;             
+  text-align: center;   
+  position: fixed;          
 }
 
 .slide {
@@ -224,4 +225,109 @@ footer .abajo p {
   font-weight: bold;
   color: #e8a441;
   font-size: 18px;
+}
+
+
+/*----------------------------CONTACTO--------------------------------------*/
+
+.contacto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding: 20px;
+  color: #dfdfdf;
+  font-family: 'Teko', 'Montserrat', sans-serif;
+}
+/*--para ciudad y provincia, telefono y correo electronico--*/
+
+.form-row {
+  display: flex;
+  gap: 20px; 
+}
+
+.form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.contacto-info {
+  flex: 1;
+
+  padding-top: 60px;
+}
+
+.contacto-info h2 {
+  color: #e8a441;
+  margin-bottom: 20px;
+}
+
+.redes {
+  list-style: none;
+  padding: 0;
+}
+
+.redes li {
+  margin-bottom: 15px;
+}
+
+.redes a {
+  color: #aaaaaa;
+  text-decoration: none;
+}
+
+.redes a:hover {
+  color: white;
+}
+
+/*---------formulario-----------*/
+
+.formulario-contacto {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 500px;
+}
+.formulario-contacto h2 {
+  color:#e8a441;
+  font-size: 40px;
+}
+
+.formulario-contacto label {
+  text-align: left;
+  font-weight: bold;
+  color: #aaaaaa;
+}
+
+.formulario-contacto input, /*--me habia olvidado q se le podia poner coma---*/
+.formulario-contacto textarea {
+  padding: 10px;
+  border: 1px solid #444;
+  border-radius: 5px;
+  background-color: #1a1a1a;
+  color: #aaaaaa;
+  font-size: 14px;
+}
+
+.formulario-contacto input:focus,
+.formulario-contacto textarea:focus {
+  outline: none;
+  border-color: #e8a441;
+}
+
+.formulario-contacto button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #e8a441;
+  color: #0e0e0e;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s; /*----amo estas cosas jajajaj------*/
+}
+
+.formulario-contacto button:hover {
+  background-color: #c97a2d; /*---agregue un color mas oscuro para que se note-----*/
 }

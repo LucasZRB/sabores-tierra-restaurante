@@ -3,11 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="estilos.css">
-/*teko*/
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quantico:ital,wght@0,400;0,700;1,400;1,700&family=Science+Gothic:wght@100..900&family=Teko:wght@300..700&display=swap" rel="stylesheet">
-/*Nunito Sans*/
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&family=Science+Gothic:wght@100..900&family=Teko:wght@300..700&display=swap" rel="stylesheet">
@@ -31,70 +31,77 @@
       <li><a href="index.html">INICIO</a></li>
       <li><a href="productos.html">PRODUCTOS</a></li>
       <li><a href="contacto.html">CONTACTO</a></li>
-      <li class="historia"><a href="#historia">NUESTRA HISTORIA</a></li>
       
     </ul>
   </nav>
 
+
 <main>
-  <!-- parte de abajo-->
-<article>
-    <div id="historia" class="carousel">
-  <h2>Nuestra Historia</h2>
-  
-  <div class="slide active">
-    <p>“Sabores de la Tierra” nació de un sueño sencillo: 
-      recuperar la esencia de las comidas compartidas en torno al fuego. 
-      Todo comenzó en una antigua casona de madera, donde las reuniones 
-      familiares se llenaban de aromas intensos, vinos generosos y carnes 
-      condimentadas con esmero.</p>
-  </div>
-  <div class="slide">
-    <p>Lo que empezó como encuentros entre amigos se transformó en un 
-      proyecto más grande: abrir las puertas de un lugar donde cada visitante 
-      pudiera sentir la calidez de lo rústico y la fuerza de lo auténtico. 
-      Inspirados por la tradición y el respeto a los sabores de nuestra tierra, 
-      levantamos un espacio que honra lo natural, lo artesanal y lo verdadero.</p>
-  </div>
-  <div class="slide">
-    <p>Hoy, cada plato que servimos cuenta esa historia: la de un origen humilde, 
-      una pasión por la cocina y un compromiso con ofrecer experiencias que nacen 
-      de la tierra y se disfrutan en el alma.</p>
-  </div>
+  <section class="contacto">
 
-  <!-- botones para cambiar img-->
-  
-  <button class="prev">◀︎</button><button class="next">▶︎</button>
+    <!--formulario -->
+    <form action="#" method="post" class="formulario-contacto">
+      <h2>Contáctanos</h2>
+
+      <label for="nombre">Nombre y Apellido:</label>
+      <input type="text" id="nombre" name="nombre" required maxlength="100">
+
+<div class="form-row">
+  <div class="form-group">
+      
+      <label for="ciudad">Ciudad:</label>
+      <input type="text" id="ciudad" name="ciudad" required maxlength="50">
+    
+  </div>
+  <div class="form-group">
+      
+      <label for="provincia">Provincia:</label>
+      <input type="text" id="provincia" name="provincia" required maxlength="50">
+    
+    </div>
 </div>
-<script>
-  const slides = document.querySelectorAll(".slide"); //busca todos los slide y los guarda en una constante
-  let currentIndex = 0; //empi9eza por la primer dispositiva
 
-  function showSlide(index) {
-    slides.forEach((slide, i) => { //recorre las dispositivas
-      slide.classList.toggle("active", i === index);
-    });
-  }
+      <label for="domicilio">Domicilio:</label>
+      <input type="text" id="domicilio" name="domicilio" required maxlength="100">
 
-  document.querySelector(".next").addEventListener("click", () => { //boton
-    currentIndex = (currentIndex + 1) % slides.length;
-    showSlide(currentIndex);
-  });
+<div class="form-row">
+  <div class="form-group">
+      
+      <label for="telefono">Teléfono:</label>
+      <input type="tel" id="telefono" name="telefono" required pattern="[0-9]{10,15}" placeholder="Ej: 2911234567">
+   
+  </div>
+  <div class="form-group">
+    
+      <label for="correo">Correo electrónico:</label>
+      <input type="email" id="correo" name="correo" required placeholder="ejemplo@correo.com">
+   
+  </div>
+</div>
 
-  document.querySelector(".prev").addEventListener("click", () => { //boton
-    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-    showSlide(currentIndex);
-  });
+      <label for="mensaje">Mensaje:</label>
+      <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
 
- 
-  setInterval(() => { 
-    currentIndex = (currentIndex + 1) % slides.length;
-    showSlide(currentIndex);
-  }, 8000);// Cambio automatico cada 8 segundos
-</script>
-</article>
+
+      <button type="submit">Enviar</button>
+      <button type="reset">Borrar</button> <!--para borrar lo ingresado -->
+    </form>
+
+  </section>
+
+      <!--redes -->
+    <div class="contacto-info">
+      <h2>Nuestras redes sociales:</h2>
+      <ul class="redes">
+        <li><a href="#">Facebook: @SaboresdelaTierra</a></li>
+        <li><a href="#">Instagram: @SaboresDeLaTierra</a></li>
+        <li><a href="#">Twitter: @saboresdelatierra</a></li>
+        <li><a href="#">WhatsApp: +54 291 1234567</a></li>
+      </ul>
+    </div>
 
 </main>
+
 
 <footer> 
   <div class="abajo">
