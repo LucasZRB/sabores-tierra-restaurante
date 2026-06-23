@@ -2,6 +2,7 @@ import { useState } from "react";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "./styles/GlobalStyles";
 import { theme } from "./styles/theme";
+import { MainLayout } from "./App.styles";
 
 // Componentes Fijos
 import { Navbar } from "./components/Navbar/Navbar";
@@ -44,9 +45,9 @@ function App() {
     <ThemeProvider theme={theme}>
       <GlobalStyles />
       <Navbar currentScreen={currentScreen} setCurrentScreen={setCurrentScreen} />
-      <main style={{ minHeight: '80vh', padding: '20px', paddingTop: "98px" }}>
+      <MainLayout>
         {renderScreen()}
-      </main>
+      </MainLayout>
       <Footer />
     </ThemeProvider>
   )
