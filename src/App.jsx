@@ -44,7 +44,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <GlobalStyles />
       <Navbar currentScreen={currentScreen} setCurrentScreen={setCurrentScreen} />
-      <main style={{ minHeight: '80vh', padding: '20px' }}>
+      <main style={{ minHeight: '80vh', padding: '20px', paddingTop: "98px" }}>
         {renderScreen()}
       </main>
       <Footer />
