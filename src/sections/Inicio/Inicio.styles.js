@@ -38,3 +38,13 @@ export const CTAButton = styled.button`
     transform: translateY(-2px);
   }
 `;
+
+export const EmotionalText = styled.p`
+  max-width: 650px;
+  margin-top: 20px;
+  font-size: 1rem;
+  line-height: 1.7;
+  font-family: ${({ theme }) => theme.fonts.nunito};
+  color: ${({ theme }) => theme.colors.textoSecundario};
+  opacity: 0.9;
+`;
