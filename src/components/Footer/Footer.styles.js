@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const FooterContainer = styled.footer`
   background-color: ${({ theme }) => theme.colors.bgPrincipal};
-  border-top: 1px solid ${({ theme }) => theme.colors.detalles};
+  border-top: 4px solid ${({ theme }) => theme.colors.detalles};
   font-family: ${({ theme }) => theme.fonts.nunito};
   padding: 20px 40px;
 `;
