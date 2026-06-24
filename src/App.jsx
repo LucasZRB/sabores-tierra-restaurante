@@ -27,7 +27,7 @@ function App() {
   const renderScreen = () => {
     switch (currentScreen) {
       case 'inicio':
-        return <Inicio />;
+        return <Inicio onGo={() => setCurrentScreen('productos')} />;
       case 'productos':
         return <Productos onSelectCard={verProducto} />;
       case 'contacto':
@@ -37,7 +37,7 @@ function App() {
       case 'detalle-producto':
         return <DetalleProducto producto={selectedProduct} onVolver={() => setCurrentScreen('productos')} />;
       default:
-        return <Inicio />;
+        return <Inicio onGo={() => setCurrentScreen('productos')} />;
     }
   };
 
