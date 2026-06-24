@@ -1,15 +1,27 @@
+import { useRef } from 'react';
 import { SectionTitle } from '../Productos/Productos.styles';
 import { ContactLayout, Form, InputGroup, Label, Input, TextArea, SubmitButton, ContactGrid, Row, ResetButton, InfoSection, InfoTitle, InfoBlock, SocialSection } from './Contacto.styles';
 
 export const Contacto = () => {
-  const handleSubmit = (e) => e.preventDefault();
+  const refFormulario = useRef();
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+
+    const datosEnvio = new FormData(e.target);
+    const valores = Object.fromEntries(datosEnvio.entries());
+    console.log('Datos capturados:', valores);
+
+    window.alert(`¡Valores enviados con éxito, ${valores.nombre}!`);
+    refFormulario.current.reset()
+  };
 
   return (
     <ContactLayout>
       <SectionTitle>Contacto</SectionTitle>
 
       <ContactGrid>
-        <Form onSubmit={handleSubmit}>
+        <Form ref={refFormulario} onSubmit={handleSubmit}>
           <InputGroup>
             <Label htmlFor='nombre'>Nombre Completo</Label>
             <Input type="text" id="nombre" name="nombre" placeholder="Introduce Nombre y Apellido" required maxLength={100} />

@@ -26,6 +26,13 @@ export function DetalleProducto({ producto, onVolver }) {
 
   if (!producto) return null;
 
+  const handleAniadirProducto = () => {
+    window.alert(
+      `¡"${producto.nombre}" x ${cantidad}, fue añadido al carrito con éxito!`
+    );
+    onVolver();
+  }
+
   return (
     <DetailWrapper>
       <BackButton onClick={onVolver}>◀ Volver al Menú</BackButton>
@@ -58,7 +65,7 @@ export function DetalleProducto({ producto, onVolver }) {
               <button onClick={() => setCantidad(prev => prev + 1)}>+</button>
             </QuantitySelector>
             
-            <OrderButton>Agregar al Pedido</OrderButton>
+            <OrderButton onClick={handleAniadirProducto}>Agregar al Pedido</OrderButton>
           </PurchaseActions>
         </InfoPane>
       </FlexLayout>
