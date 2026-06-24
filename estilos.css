@@ -1,5 +1,5 @@
 body.index{
-  background-image: url("fondo2.jpg");
+  background-image: url("./src/assets/fondo2.jpg");
   background-size: cover; 
   background-position: center top;
   background-color: black;
@@ -9,7 +9,7 @@ body.index{
 }
 
 body.contacto{
-  background-image: url("fondo1.jpg");
+  background-image: url("./src/assets/fondo1.jpg");
   background-size: cover; 
   background-position: center top;
   background-color: black;
@@ -19,7 +19,7 @@ body.contacto{
 }
 
 body.productos{
-  background-image: url("fondo1.jpg");
+  background-image: url("./src/assets/fondo1.jpg");
   background-size: cover; 
   background-position: center top;
   background-color: black;
@@ -40,6 +40,7 @@ body.productos{
   top: 0;
   left: 0;
   width: 100%;
+  z-index: 1;
 
 }
 

@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="estilos.css">
+<!-- teko -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quantico:ital,wght@0,400;0,700;1,400;1,700&family=Science+Gothic:wght@100..900&family=Teko:wght@300..700&display=swap" rel="stylesheet">
+<!-- Nunito Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&family=Science+Gothic:wght@100..900&family=Teko:wght@300..700&display=swap" rel="stylesheet">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="icon" href="./src/assets/iconoBarra.png" type="image/png">
+    <title>Sabores de la Tierra</title>
+  </head>
+  <body class="index">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+
+        <nav class="navbar">
+
+    <div class="logo">
+      <img src="./src/assets/iconoBarra.png" alt="Logo">
+    </div>
+
+    <!--navegador-->
+    <ul class="nav-links">
+     <li><a href="index_v2.html">INICIO</a></li>
+     <li><a href="productos.html">PRODUCTOS</a></li>
+      <li><a href="contacto.html">CONTACTO</a></li>
+      <li class="historia"><a href="#historia">NUESTRA HISTORIA</a></li>
+</ul>
+
+      
+    </ul>
+  </nav>
+<main>
+    <div class="logoMain">
+      <img src="./src/assets/icono1.png" alt="Logo1">
+    </div>
+    <p>"Nuestro espacio rústico y acogedor da la bienvenida donde cada plato refleja la esencia de lo auténtico. Entre maderas, aromas y tradición, invitamos a disfrutar de una experiencia 
+    culinaria que celebra la calidez de la tierra
+    y el placer de compartir"</p>
+    
+    
+<!-- parte de abajo-->
+<article>
+    <div id="historia" class="carousel">
+  <h2>Nuestra Historia</h2>
+  
+  <div class="slide active">
+    <p>“Sabores de la Tierra” nació de un sueño sencillo: 
+      recuperar la esencia de las comidas compartidas en torno al fuego. 
+      Todo comenzó en una antigua casona de madera, donde las reuniones 
+      familiares se llenaban de aromas intensos, vinos generosos y carnes 
+      condimentadas con esmero.</p>
+  </div>
+  <div class="slide">
+    <p>Lo que empezó como encuentros entre amigos se transformó en un 
+      proyecto más grande: abrir las puertas de un lugar donde cada visitante 
+      pudiera sentir la calidez de lo rústico y la fuerza de lo auténtico. 
+      Inspirados por la tradición y el respeto a los sabores de nuestra tierra, 
+      levantamos un espacio que honra lo natural, lo artesanal y lo verdadero.</p>
+  </div>
+  <div class="slide">
+    <p>Hoy, cada plato que servimos cuenta esa historia: la de un origen humilde, 
+      una pasión por la cocina y un compromiso con ofrecer experiencias que nacen 
+      de la tierra y se disfrutan en el alma.</p>
+  </div>
+
+  <!-- botones para cambiar img-->
+  
+  <button class="prev">◀︎</button><button class="next">▶︎</button>
+</div>
+
+
+<script>
+  const slides = document.querySelectorAll(".slide"); //busca todos los slide y los guarda en una constante
+  let currentIndex = 0; //empi9eza por la primer dispositiva
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => { //recorre las dispositivas
+      slide.classList.toggle("active", i === index);
+    });
+  }
+
+  document.querySelector(".next").addEventListener("click", () => { //boton
+    currentIndex = (currentIndex + 1) % slides.length;
+    showSlide(currentIndex);
+  });
+
+  document.querySelector(".prev").addEventListener("click", () => { //boton
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    showSlide(currentIndex);
+  });
+
+ 
+  setInterval(() => { 
+    currentIndex = (currentIndex + 1) % slides.length;
+    showSlide(currentIndex);
+  }, 8000);// Cambio automatico cada 8 segundos
+</script>
+
+</article>
+</main>
+
+
+
+<footer> 
+  <div class="abajo">
+    <p>© 2026 Sabores de la Tierra | Todos los derechos reservados</p>
+    <p>Bahía Blanca, Buenos Aires, Argentina</p></div>
+</footer>
+    
+  </body>
+</html>
