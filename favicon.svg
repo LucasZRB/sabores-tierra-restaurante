@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<svg width="57.5" height="21.1" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" version="1.0">
+ <title>icon</title>
+
+ <g class="layer">
+  <title>Layer 1</title>
+  <path d="m10.5,10.5l-10.5,10.5l28.8,0c15.8,0 28.7,-0.1 28.7,-0.3c0,-0.1 -3.2,-3.5 -7,-7.6l-7.1,-7.4l-4,3.8l-3.9,3.9l-6.8,-6.7c-3.7,-3.7 -7,-6.7 -7.2,-6.7c-0.3,0 -5.2,4.7 -11,10.5z" id="svg_4" fill="#cbc2b5"/>
+ </g>
+</svg>
