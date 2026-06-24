@@ -41,7 +41,7 @@ export const CTAButton = styled.button`
 
 export const EmotionalText = styled.p`
   max-width: 650px;
-  margin-top: 20px;
+  margin-bottom: 20px;
   font-size: 1rem;
   line-height: 1.7;
   font-family: ${({ theme }) => theme.fonts.nunito};

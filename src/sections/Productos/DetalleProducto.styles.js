@@ -49,14 +49,18 @@ export const InfoPane = styled.div`
 export const RatingContainer = styled.div`
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin-bottom: 10px;
-  color: ${({ theme }) => theme.colors.accent}; /* Estrellas doradas */
+  gap: 8px;
+  color: ${({ theme }) => theme.colors.accent};
   font-family: ${({ theme }) => theme.fonts.montserrat};
-  font-size: 0.9rem;
+  font-size: 0.95rem;
 
   span {
+    color: ${({ theme }) => theme.colors.accent};
+  }
+
+  span:last-child {
     color: ${({ theme }) => theme.colors.textoSecundario};
+    margin-left: 8px;
   }
 `;
 

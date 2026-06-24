@@ -13,6 +13,13 @@ export const SectionTitle = styled.h2`
   margin-bottom: 50px;
 `;
 
+export const CategoryTitle = styled.h2`
+  font-size: 2rem;
+  color: ${({ theme }) => theme.colors.accent};
+  margin: 40px 0 20px;
+  text-align: center;
+`;
+
 export const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -56,4 +63,12 @@ export const CardText = styled.p`
   color: ${({ theme }) => theme.colors.textoSecundario};
   font-size: 0.95rem;
   line-height: 1.4;
+`;
+
+export const Price = styled.span`
+  display: block;
+  margin-top: 10px;
+  color: ${({ theme }) => theme.colors.accent};
+  font-weight: bold;
+  font-size: 1.1rem;
 `;

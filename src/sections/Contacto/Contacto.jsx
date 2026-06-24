@@ -18,18 +18,18 @@ export const Contacto = () => {
           <Row>
             <InputGroup>
               <Label htmlFor="ciudad">Ciudad</Label>
-              <Input type="text" id="ciudad" name="ciudad" required maxlength={50} placeholder='Bahia Blanca' />
+              <Input type="text" id="ciudad" name="ciudad" required maxLength={50} placeholder='Bahia Blanca' />
             </InputGroup>
 
             <InputGroup>
               <Label htmlFor="provincia">Provincia</Label>
-              <Input type="text" id="provincia" name="provincia" required maxlength={50} placeholder='Buenos Aires' />
+              <Input type="text" id="provincia" name="provincia" required maxLength={50} placeholder='Buenos Aires' />
             </InputGroup>
           </Row>
 
           <InputGroup>
             <Label htmlFor="domicilio">Domicilio</Label>
-            <Input type="text" id="domicilio" name="domicilio" required maxlength={100} placeholder='Avenida Simpre Viva 1234' />
+            <Input type="text" id="domicilio" name="domicilio" required maxLength={100} placeholder='Avenida Simpre Viva 1234' />
           </InputGroup>
 
           <Row>
