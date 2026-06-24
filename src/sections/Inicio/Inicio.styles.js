@@ -8,26 +8,12 @@ export const HeroContainer = styled.section`
   text-align: center;
   min-height: 80vh;
   padding: 40px;
-  /* Imagen sutil de fondo usando una máscara oscura para no molestar la lectura */
-  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), 
-              url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1920') no-repeat center center;
-  background-size: cover;
-  position: relative;
 `;
 
-export const Title = styled.h1`
-  font-size: 5rem;
-  color: ${({ theme }) => theme.colors.textoPrincipal};
-  margin-bottom: 10px;
-  letter-spacing: 2px;
-`;
-
-export const Subtitle = styled.h2`
-  font-size: 2rem;
-  color: ${({ theme }) => theme.colors.textoSecundario};
-  font-family: ${({ theme }) => theme.fonts.montserrat};
-  font-weight: 400;
-  margin-bottom: 25px;
+export const LogoMain = styled.img`
+  width: min(500px, 90vw);
+  height: auto;
+  margin-bottom: 30px;
 `;
 
 export const Description = styled.p`
@@ -51,4 +37,14 @@ export const CTAButton = styled.button`
     background-color: ${({ theme }) => theme.colors.accent};
     transform: translateY(-2px);
   }
+`;
+
+export const EmotionalText = styled.p`
+  max-width: 650px;
+  margin-bottom: 20px;
+  font-size: 1rem;
+  line-height: 1.7;
+  font-family: ${({ theme }) => theme.fonts.nunito};
+  color: ${({ theme }) => theme.colors.textoSecundario};
+  opacity: 0.9;
 `;

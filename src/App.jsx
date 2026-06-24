@@ -2,6 +2,7 @@ import { useState } from "react";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "./styles/GlobalStyles";
 import { theme } from "./styles/theme";
+import { MainLayout } from "./App.styles";
 
 // Componentes Fijos
 import { Navbar } from "./components/Navbar/Navbar";
@@ -26,7 +27,7 @@ function App() {
   const renderScreen = () => {
     switch (currentScreen) {
       case 'inicio':
-        return <Inicio />;
+        return <Inicio onGo={() => setCurrentScreen('productos')} />;
       case 'productos':
         return <Productos onSelectCard={verProducto} />;
       case 'contacto':
@@ -36,7 +37,7 @@ function App() {
       case 'detalle-producto':
         return <DetalleProducto producto={selectedProduct} onVolver={() => setCurrentScreen('productos')} />;
       default:
-        return <Inicio />;
+        return <Inicio onGo={() => setCurrentScreen('productos')} />;
     }
   };
 
@@ -44,9 +45,9 @@ function App() {
     <ThemeProvider theme={theme}>
       <GlobalStyles />
       <Navbar currentScreen={currentScreen} setCurrentScreen={setCurrentScreen} />
-      <main style={{ minHeight: '80vh', padding: '20px' }}>
+      <MainLayout $isPrincipal={currentScreen === 'inicio'}>
         {renderScreen()}
-      </main>
+      </MainLayout>
       <Footer />
     </ThemeProvider>
   )

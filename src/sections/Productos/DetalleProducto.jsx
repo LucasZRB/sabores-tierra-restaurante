@@ -5,14 +5,33 @@ import {
   PurchaseActions, QuantitySelector, OrderButton 
 } from './DetalleProducto.styles';
 
+const renderStars = (rating) => {
+  const stars = [];
+
+  for (let i = 1; i <= 5; i++) {
+    if (rating >= i) {
+      stars.push('★');
+    } else if (rating >= i - 0.5) {
+      stars.push('☆'); // podrías luego cambiarlo por media estrella SVG
+    } else {
+      stars.push('☆');
+    }
+  }
+
+  return stars;
+};
+
 export function DetalleProducto({ producto, onVolver }) {
   const [cantidad, setCantidad] = useState(1);
 
   if (!producto) return null;
 
-  // Precios ficticios según el plato seleccionado para simular realismo
-  const preciosMock = { 1: '$14.500', 2: '$11.200', 3: '$9.800' };
-  const notasMock = { 1: '4.9 (120 opiniones)', 2: '4.8 (85 opiniones)', 3: '4.7 (210 opiniones)' };
+  const handleAniadirProducto = () => {
+    window.alert(
+      `¡"${producto.nombre}" x ${cantidad}, fue añadido al carrito con éxito!`
+    );
+    onVolver();
+  }
 
   return (
     <DetailWrapper>
@@ -23,11 +42,17 @@ export function DetalleProducto({ producto, onVolver }) {
         
         <InfoPane>
           <RatingContainer>
-            ★ ★ ★ ★ ★ <span>{notasMock[producto.id] || '4.8 (50 opiniones)'}</span>
+            {renderStars(producto.rating).map((star, i) => (
+              <span key={i}>{star}</span>
+            ))}
+
+            <span>
+              {producto.rating.toFixed(1)} ({producto.reviews} opiniones)
+            </span>
           </RatingContainer>
           
           <ProductTitle>{producto.nombre}</ProductTitle>
-          <PriceTag>{preciosMock[producto.id] || '$12.000'}</PriceTag>
+          <PriceTag>{producto.precio.toLocaleString('es-AR')}</PriceTag>
           
           <ProductDescription>
             {producto.desc} Elaborado al momento empleando materias primas frescas de productores locales. Servido con su guarnición caliente y aderezos artesanales de la casa.
@@ -40,7 +65,7 @@ export function DetalleProducto({ producto, onVolver }) {
               <button onClick={() => setCantidad(prev => prev + 1)}>+</button>
             </QuantitySelector>
             
-            <OrderButton>Agregar al Pedido</OrderButton>
+            <OrderButton onClick={handleAniadirProducto}>Agregar al Pedido</OrderButton>
           </PurchaseActions>
         </InfoPane>
       </FlexLayout>

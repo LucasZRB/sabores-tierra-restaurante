@@ -10,6 +10,7 @@ export const HistoryWrapper = styled.section`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: relative;
 `;
 
 export const CarouselContainer = styled.div`
@@ -30,6 +31,10 @@ export const HistoryText = styled.p`
   text-align: center;
   flex: 1;
   max-width: 650px;
+
+  @media (max-width: 768px) {
+    font-size: 1.05rem;
+  }
 `;
 
 export const TriangleButton = styled.button`
@@ -44,6 +49,23 @@ export const TriangleButton = styled.button`
 
   &:hover {
     color: ${({ theme }) => theme.colors.accent};
+  }
+`;
+
+export const ControlButton = styled.button`
+  padding: 12px 28px;
+  border-radius: 4px;
+  background-color: ${({ theme }) => theme.colors.btnNormal};
+  color: ${({ theme }) => theme.colors.textoPrincipal};
+  font-family: ${({ theme }) => theme.fonts.montserrat};
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  position: absolute;
+  bottom: -26px;
+
+  &:hover {
+    background-color: ${({ theme }) => theme.colors.accent};
   }
 `;
 
